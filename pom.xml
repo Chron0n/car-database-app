@@ -4,10 +4,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example</groupId>
-  <artifactId>my-project</artifactId>
+  <artifactId>cat-database-app</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>my-project</name>
+  <name>car-database-app</name>
 
   <properties>
     <maven.compiler.source>21</maven.compiler.source>
