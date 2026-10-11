@@ -1,0 +1,7 @@
+.vscode/
+
+target/
+*.class
+
+.env
+pmd-raport.html
