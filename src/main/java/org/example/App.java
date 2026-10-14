@@ -9,6 +9,7 @@ public final class App {
   /**
    * Main function.
    */
+
   public static void main(String[] args) {
     CarRepository carRepository = new CarRepository();
     CarService carService = new CarService(carRepository);
