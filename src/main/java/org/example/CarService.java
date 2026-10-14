@@ -43,7 +43,8 @@ public class CarService {
    */
   public Car read(String carName) {
     Optional<Car> foundCar = carRepository.findByName(carName);
-    return foundCar.orElseThrow(() -> new IllegalArgumentException("Car named " + carName + " not found"));
+    return foundCar.orElseThrow(() ->
+      new IllegalArgumentException("Car named " + carName + " not found"));
   }
 
   /**
@@ -83,7 +84,8 @@ public class CarService {
 
     StringBuilder sb = new StringBuilder();
     sb.append(String.format("%-15s | %-15s | %-15s%n", "Parameter", carName1, carName2));
-    sb.append(String.format("%-15s | %-15s | %-15s%n", "---------------", "---------------", "---------------"));
+    sb.append(String.format("%-15s | %-15s | %-15s%n",
+                           "---------------", "---------------", "---------------"));
     sb.append(String.format("%-15s | %-15s | %-15s%n", "Brand", car1.getBrand(), car2.getBrand()));
     sb.append(String.format("%-15s | %-15s | %-15s%n", "Mode", car1.getModel(), car2.getModel()));
     sb.append(String.format("%-15s | %-15s | %-15s%n", "Year", car1.getYear(), car2.getYear()));

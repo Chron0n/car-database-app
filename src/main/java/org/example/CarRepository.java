@@ -1,5 +1,6 @@
 package org.example;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,9 +14,19 @@ import java.util.Optional;
  * CarRepository - handle DB requests.
  */
 public class CarRepository {
-  private static final String dbUrl = "jdbc:mariadb://localhost:3306/car_db";
-  private static final String dbUser = "appuser";
-  private static final String dbPassword = "Jabłko01";
+  private final String dbUrl;
+  private final String dbUser;
+  private final String dbPassword;
+
+  /**
+   * Set url, user, password to database.
+   */
+  public CarRepository() {
+    Dotenv dotenv = Dotenv.load();
+    this.dbUrl = dotenv.get("DB_URL");
+    this.dbUser = dotenv.get("DB_USER");
+    this.dbPassword = dotenv.get("DB_PASSWORD");
+  }
 
   private Connection getConnection() throws SQLException {
     return DriverManager.getConnection(dbUrl, dbUser, dbPassword);
