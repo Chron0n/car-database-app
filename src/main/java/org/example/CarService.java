@@ -43,7 +43,7 @@ public class CarService {
    */
   public Car read(String carName) {
     Optional<Car> foundCar = carRepository.findByName(carName);
-    return foundCar.orElseThrow(() -> 
+    return foundCar.orElseThrow(() ->
       new IllegalArgumentException("Car named " + carName + " not found"));
   }
 
